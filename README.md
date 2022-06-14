@@ -12,9 +12,14 @@ An Rscript that automates sequence trace analysis.
 
 2. Simple quality control was applied: sequences shorter than 300 nucleotides, or containing more than one N base call were removed (these are unaligned sequences, so N reflects poor sequencing traces rather than SHM).
 
-3. The W33L locus was identified using matchPattern function - allowing 2 nucleotide mismatches and indels) from the Biostrings package (https://bioconductor.org/packages/Biostrings) - searching for ACCAGCTACTNNATGCACTGG in the reverse complemented sequence data.
+3. The W33L locus was identified using matchPattern function - allowing 2 nucleotide mismatches and indels) from the Biostrings package (https://bioconductor.org/packages/Biostrings) - searching for `ACCAGCTACTNNATGCACTGG` in the reverse complemented sequence data.
   
-4. a W or L call was assigned as follows: if TNN (in the appropriate position in the nucleotide string above) was TGG the assignment was W, if TNN was TTA or TTG, this was assigned L, any alternative sequences for TNN were assigned other. Per sample calls were exported as a CSV for downstream analysis.
+4. a `W` or `L` call was assigned as follows:
+- if `TNN` (in the appropriate position in the nucleotide string above) was `TGG` the assignment was `W`
+- if `TNN` was `TTA` or `TTG`, this was assigned `L`
+- any alternative sequences for `TNN` were assigned `other`
+
+5. Per sample calls were exported as a CSV for downstream analysis.
 
 ## Use
 
